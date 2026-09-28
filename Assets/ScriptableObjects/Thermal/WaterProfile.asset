@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede3557474733374481679406f852715, type: 3}
+  m_Name: WaterProfile
+  m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
+  startTemperature: 20
+  minTemperature: -20
+  maxTemperature: 100
+  thresholds:
+  - celsius: -1
+    state: 0
+  - celsius: 1
+    state: 2
