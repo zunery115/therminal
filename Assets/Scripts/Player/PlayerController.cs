@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        input = new GameInputs();
+
+        if (input == null)
+            input = new GameInputs();
 
         if (toolOrigin == null)
             toolOrigin = transform.Find("ToolOrigin");
@@ -26,6 +28,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (input == null)
+            input = new GameInputs();
+
         input.Player.Enable();
         input.Player.Move.performed += OnMove;
         input.Player.Move.canceled += OnMove;
@@ -37,6 +42,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        if (input == null) return;
+
         input.Player.Move.performed -= OnMove;
         input.Player.Move.canceled -= OnMove;
         input.Player.Disable();
@@ -51,11 +58,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * (stats.speed * stats.speedMultiplier);
+        if (stats == null || rb == null) return;
 
         if (toolOrigin != null)
             toolOrigin.localPosition = facing * 0.55f;
 
+        rb.linearVelocity = moveInput * (stats.speed * stats.speedMultiplier);
         ApplyTemperature(Time.fixedDeltaTime);
     }
 

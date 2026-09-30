@@ -15,6 +15,7 @@ MonoBehaviour:
   startTemperature: -10
   minTemperature: -40
   maxTemperature: 40
+  returnRate: 8
   thresholds:
   - celsius: -40
     state: 0

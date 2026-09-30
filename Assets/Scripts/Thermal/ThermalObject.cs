@@ -20,7 +20,7 @@ public class ThermalObject : MonoBehaviour
         return currentState switch
         {
             ThermalState.Frozen => "Ice",
-            ThermalState.Solid => "Ice",
+            ThermalState.Solid => "Metal",
             ThermalState.Liquid => "Water",
             ThermalState.Vapor => "Vapor",
             ThermalState.Expanded => "Expanded Metal",
@@ -36,10 +36,13 @@ public class ThermalObject : MonoBehaviour
         currentTemperature = profile.startTemperature;
         currentState = EvaluateState(currentTemperature);
         ApplyState(currentState);
+        onStateChanged?.Invoke(currentState);
     }
 
     private void Update()
     {
+        SyncCollider();
+
         if (profile == null || profile.returnRate <= 0f) return;
 
         float target = profile.startTemperature;
@@ -85,23 +88,13 @@ public class ThermalObject : MonoBehaviour
 
     private void ApplyState(ThermalState state)
     {
-        bool walkable = state == ThermalState.Frozen
-                        || state == ThermalState.Solid
-                        || state == ThermalState.Expanded
-                        || state == ThermalState.Contracted;
-
-        if (solidCollider != null)
-        {
-            solidCollider.enabled = true;
-            solidCollider.isTrigger = !walkable;
-        }
+        SyncCollider();
 
         if (view == null) return;
 
         switch (state)
         {
             case ThermalState.Frozen:
-            case ThermalState.Solid:
                 view.color = new Color(0.6f, 0.85f, 1f, 1f);
                 break;
 
@@ -113,9 +106,27 @@ public class ThermalObject : MonoBehaviour
                 view.color = new Color(1f, 1f, 1f, 0.15f);
                 break;
 
+            case ThermalState.Solid:
+            case ThermalState.Expanded:
+            case ThermalState.Contracted:
+                break;
+
             default:
                 view.color = Color.white;
                 break;
         }
+    }
+
+    private void SyncCollider()
+    {
+        if (solidCollider == null) return;
+
+        bool walkable = currentState == ThermalState.Frozen
+                        || currentState == ThermalState.Solid
+                        || currentState == ThermalState.Expanded
+                        || currentState == ThermalState.Contracted;
+
+        solidCollider.enabled = true;
+        solidCollider.isTrigger = !walkable;
     }
 }
