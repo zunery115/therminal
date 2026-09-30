@@ -15,6 +15,20 @@ public class ThermalObject : MonoBehaviour
     public float Temperature => currentTemperature;
     public ThermalState State => currentState;
 
+    public string GetDisplayName()
+    {
+        return currentState switch
+        {
+            ThermalState.Frozen => "Ice",
+            ThermalState.Solid => "Ice",
+            ThermalState.Liquid => "Water",
+            ThermalState.Vapor => "Vapor",
+            ThermalState.Expanded => "Expanded Metal",
+            ThermalState.Contracted => "Contracted Metal",
+            _ => name
+        };
+    }
+
     private void Awake()
     {
         if (profile == null) return;
@@ -22,6 +36,18 @@ public class ThermalObject : MonoBehaviour
         currentTemperature = profile.startTemperature;
         currentState = EvaluateState(currentTemperature);
         ApplyState(currentState);
+    }
+
+    private void Update()
+    {
+        if (profile == null || profile.returnRate <= 0f) return;
+
+        float target = profile.startTemperature;
+        if (Mathf.Approximately(currentTemperature, target)) return;
+
+        float step = profile.returnRate * Time.deltaTime;
+        float next = Mathf.MoveTowards(currentTemperature, target, step);
+        AddTemperature(next - currentTemperature);
     }
 
     public void AddTemperature(float delta)

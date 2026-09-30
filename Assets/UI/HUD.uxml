@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="HUD.uss" />
+    <ui:VisualElement name="root" class="hud-root">
+        <ui:VisualElement name="thermo-card" class="thermo-card thermo-hidden">
+            <ui:Label name="thermo-name" class="thermo-name" text="—" />
+            <ui:Label name="thermo-temp" class="thermo-temp" text="-- °C" />
+            <ui:Label name="thermo-state" class="thermo-state" text="—" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSO stats;
     [SerializeField] private Transform toolOrigin;
+    [SerializeField] private ThermometerUI thermometer;
 
     private GameInputs input;
     private Rigidbody2D rb;
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
-
         if (moveInput.sqrMagnitude > 0.01f)
             facing = moveInput.normalized;
     }
@@ -65,18 +65,31 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(facing.x), 1f, 1f);
     }
 
-    private void ApplyTemperature(float dt)
+    private ThermalObject GetTarget()
     {
-        if (heating == cooling) return;
-        if (stats == null) return;
+        if (stats == null) return null;
 
         Vector2 point = (Vector2)transform.position + facing * stats.toolRange;
         Collider2D hit = Physics2D.OverlapCircle(point, stats.toolRadius, stats.thermalMask);
+        if (hit == null) return null;
 
-        if (hit == null) return;
-        if (!hit.TryGetComponent(out ThermalObject thermal))
-            thermal = hit.GetComponentInParent<ThermalObject>();
-        if (thermal == null) return;
+        if (hit.TryGetComponent(out ThermalObject thermal))
+            return thermal;
+
+        return hit.GetComponentInParent<ThermalObject>();
+    }
+
+    private void ApplyTemperature(float dt)
+    {
+        ThermalObject thermal = GetTarget();
+
+        if (thermometer != null)
+        {
+            if (thermal != null) thermometer.Show(thermal);
+            else thermometer.Hide();
+        }
+
+        if (thermal == null || heating == cooling) return;
 
         float delta = heating ? stats.heatRate * dt : -stats.coolRate * dt;
         thermal.AddTemperature(delta);
@@ -88,7 +101,6 @@ public class PlayerController : MonoBehaviour
 
         Vector2 dir = Application.isPlaying ? facing : Vector2.right;
         Vector2 point = (Vector2)transform.position + dir * stats.toolRange;
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(point, stats.toolRadius);
     }

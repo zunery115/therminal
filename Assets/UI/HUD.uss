@@ -1,0 +1,45 @@
+.hud-root {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 24px;
+}
+
+.thermo-card {
+    width: 280px;
+    background-color: rgba(10, 16, 24, 0.82);
+    border-radius: 10px;
+    padding: 16px 18px;
+    border-left-width: 4px;
+    border-left-color: rgb(90, 180, 255);
+}
+
+.thermo-hidden {
+    display: none;
+}
+
+.thermo-name {
+    font-size: 18px;
+    color: rgb(230, 240, 255);
+    margin-bottom: 6px;
+    -unity-font-style: bold;
+}
+
+.thermo-temp {
+    font-size: 32px;
+    color: rgb(120, 210, 255);
+    margin-bottom: 4px;
+}
+
+.thermo-state {
+    font-size: 16px;
+    color: rgb(180, 196, 210);
+}
+
+.hot .thermo-temp {
+    color: rgb(255, 120, 70);
+}
+
+.cold .thermo-temp {
+    color: rgb(120, 210, 255);
+}
