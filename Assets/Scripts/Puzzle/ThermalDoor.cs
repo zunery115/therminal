@@ -6,8 +6,10 @@ public class ThermalDoor : MonoBehaviour
     [SerializeField] private ThermalState openWhen = ThermalState.Contracted;
     [SerializeField] private Collider2D doorCollider;
     [SerializeField] private SpriteRenderer view;
-    [SerializeField] private Color closedColor = new Color(0.35f, 0.2f, 0.2f);
+    [SerializeField] private Color closedColor = new Color(0.35f, 0.2f, 0.2f, 1f);
     [SerializeField] private Color openColor = new Color(0.35f, 0.2f, 0.2f, 0.25f);
+
+    private bool isOpen;
 
     private void Awake()
     {
@@ -18,28 +20,19 @@ public class ThermalDoor : MonoBehaviour
             view = GetComponent<SpriteRenderer>();
     }
 
-    private void OnEnable()
+    private void Update()
     {
         if (source == null) return;
-        source.onStateChanged.AddListener(OnStateChanged);
-        Refresh(source.State);
+
+        bool open = source.State == openWhen;
+        if (open == isOpen) return;
+
+        isOpen = open;
+        Apply(open);
     }
 
-    private void OnDisable()
+    private void Apply(bool open)
     {
-        if (source == null) return;
-        source.onStateChanged.RemoveListener(OnStateChanged);
-    }
-
-    private void OnStateChanged(ThermalState state)
-    {
-        Refresh(state);
-    }
-
-    private void Refresh(ThermalState state)
-    {
-        bool open = state == openWhen;
-
         if (doorCollider != null)
         {
             doorCollider.enabled = true;

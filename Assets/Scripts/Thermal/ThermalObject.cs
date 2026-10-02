@@ -7,6 +7,10 @@ public class ThermalObject : MonoBehaviour
     [SerializeField] private SpriteRenderer view;
     [SerializeField] private Collider2D solidCollider;
 
+    [Header("Sprites")]
+    [SerializeField] private Sprite iceSprite;
+    [SerializeField] private Sprite waterSprite;
+
     [SerializeField] private float currentTemperature;
     [SerializeField] private ThermalState currentState;
 
@@ -92,27 +96,18 @@ public class ThermalObject : MonoBehaviour
 
         if (view == null) return;
 
+        view.color = Color.white;
+
         switch (state)
         {
             case ThermalState.Frozen:
-                view.color = new Color(0.6f, 0.85f, 1f, 1f);
+                if (iceSprite != null)
+                    view.sprite = iceSprite;
                 break;
 
             case ThermalState.Liquid:
-                view.color = new Color(0.2f, 0.45f, 0.95f, 0.45f);
-                break;
-
-            case ThermalState.Vapor:
-                view.color = new Color(1f, 1f, 1f, 0.15f);
-                break;
-
-            case ThermalState.Solid:
-            case ThermalState.Expanded:
-            case ThermalState.Contracted:
-                break;
-
-            default:
-                view.color = Color.white;
+                if (waterSprite != null)
+                    view.sprite = waterSprite;
                 break;
         }
     }
