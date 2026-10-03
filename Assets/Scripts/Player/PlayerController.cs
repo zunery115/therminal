@@ -1,29 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSO stats;
     [SerializeField] private Transform toolOrigin;
     [SerializeField] private ThermometerUI thermometer;
 
+    private const float size = 2.5f;
+
     private GameInputs input;
     private Rigidbody2D rb;
     private Vector2 moveInput;
-    private Vector2 facing = Vector2.right;
+    private Vector2 facing = Vector2.down;
     private bool heating;
     private bool cooling;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (input == null)
-            input = new GameInputs();
-
-        if (toolOrigin == null)
-            toolOrigin = transform.Find("ToolOrigin");
+        input = new GameInputs();
     }
 
     private void OnEnable()
@@ -34,10 +30,10 @@ public class PlayerController : MonoBehaviour
         input.Player.Enable();
         input.Player.Move.performed += OnMove;
         input.Player.Move.canceled += OnMove;
-        input.Player.Heat.started += _ => heating = true;
-        input.Player.Heat.canceled += _ => heating = false;
-        input.Player.Cool.started += _ => cooling = true;
-        input.Player.Cool.canceled += _ => cooling = false;
+        input.Player.Heat.performed += OnHeat;
+        input.Player.Heat.canceled += OnHeat;
+        input.Player.Cool.performed += OnCool;
+        input.Player.Cool.canceled += OnCool;
     }
 
     private void OnDisable()
@@ -46,70 +42,81 @@ public class PlayerController : MonoBehaviour
 
         input.Player.Move.performed -= OnMove;
         input.Player.Move.canceled -= OnMove;
+        input.Player.Heat.performed -= OnHeat;
+        input.Player.Heat.canceled -= OnHeat;
+        input.Player.Cool.performed -= OnCool;
+        input.Player.Cool.canceled -= OnCool;
         input.Player.Disable();
     }
 
-    private void OnMove(InputAction.CallbackContext ctx)
+    private void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = ctx.ReadValue<Vector2>();
+        moveInput = context.ReadValue<Vector2>();
+
         if (moveInput.sqrMagnitude > 0.01f)
             facing = moveInput.normalized;
     }
 
-    private void FixedUpdate()
+    private void OnHeat(InputAction.CallbackContext context)
     {
-        if (stats == null || rb == null) return;
+        heating = context.ReadValueAsButton();
+    }
 
-        if (toolOrigin != null)
-            toolOrigin.localPosition = facing * 0.55f;
-
-        rb.linearVelocity = moveInput * (stats.speed * stats.speedMultiplier);
-        ApplyTemperature(Time.fixedDeltaTime);
+    private void OnCool(InputAction.CallbackContext context)
+    {
+        cooling = context.ReadValueAsButton();
     }
 
     private void Update()
     {
-        if (Mathf.Abs(facing.x) > 0.1f)
-            transform.localScale = new Vector3(Mathf.Sign(facing.x), 1f, 1f);
+        if (moveInput.x != 0)
+            transform.localScale = new Vector3(Mathf.Sign(moveInput.x) * size, size, 1f);
     }
 
-    private ThermalObject GetTarget()
+    private void FixedUpdate()
     {
-        if (stats == null) return null;
+        if (toolOrigin != null)
+            toolOrigin.position = rb.position + facing * 1.2f;
 
-        Vector2 point = (Vector2)transform.position + facing * stats.toolRange;
-        Collider2D hit = Physics2D.OverlapCircle(point, stats.toolRadius, stats.thermalMask);
-        if (hit == null) return null;
+        float speed = stats != null ? stats.speed * stats.speedMultiplier : 4f;
+        rb.linearVelocity = moveInput * speed;
 
-        if (hit.TryGetComponent(out ThermalObject thermal))
-            return thermal;
-
-        return hit.GetComponentInParent<ThermalObject>();
+        ApplyTemperature(Time.fixedDeltaTime);
     }
 
     private void ApplyTemperature(float dt)
     {
-        ThermalObject thermal = GetTarget();
-
-        if (thermometer != null)
-        {
-            if (thermal != null) thermometer.Show(thermal);
-            else thermometer.Hide();
-        }
-
-        if (thermal == null || heating == cooling) return;
-
-        float delta = heating ? stats.heatRate * dt : -stats.coolRate * dt;
-        thermal.AddTemperature(delta);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
         if (stats == null) return;
 
-        Vector2 dir = Application.isPlaying ? facing : Vector2.right;
-        Vector2 point = (Vector2)transform.position + dir * stats.toolRange;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(point, stats.toolRadius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            toolOrigin != null ? (Vector2)toolOrigin.position : rb.position,
+            0.8f,
+            stats.thermalMask
+        );
+
+        ThermalObject target = null;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            ThermalObject thermal = hits[i].GetComponent<ThermalObject>();
+            if (thermal == null)
+                thermal = hits[i].GetComponentInParent<ThermalObject>();
+
+            if (thermal != null)
+            {
+                target = thermal;
+                break;
+            }
+        }
+
+        if (thermometer != null)
+            thermometer.SetTarget(target);
+
+        if (target == null) return;
+
+        if (heating)
+            target.AddTemperature(stats.heatRate * dt);
+        else if (cooling)
+            target.AddTemperature(-stats.coolRate * dt);
     }
 }

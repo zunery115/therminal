@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(UIDocument))]
 public class ThermometerUI : MonoBehaviour
 {
+    [SerializeField] private UIDocument document;
+
     private VisualElement card;
     private Label nameLabel;
     private Label tempLabel;
@@ -11,36 +12,37 @@ public class ThermometerUI : MonoBehaviour
 
     private void OnEnable()
     {
-        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        if (document == null)
+            document = GetComponent<UIDocument>();
+
+        VisualElement root = document.rootVisualElement;
         card = root.Q<VisualElement>("thermo-card");
         nameLabel = root.Q<Label>("thermo-name");
         tempLabel = root.Q<Label>("thermo-temp");
         stateLabel = root.Q<Label>("thermo-state");
+
         Hide();
     }
 
-    public void Show(ThermalObject target)
+    public void SetTarget(ThermalObject target)
     {
-        if (card == null || target == null)
+        if (card == null) return;
+
+        if (target == null)
         {
             Hide();
             return;
         }
 
         card.RemoveFromClassList("thermo-hidden");
-        card.RemoveFromClassList("hot");
-        card.RemoveFromClassList("cold");
-
-        if (target.Temperature >= 20f) card.AddToClassList("hot");
-        else if (target.Temperature <= 0f) card.AddToClassList("cold");
-
         nameLabel.text = target.GetDisplayName();
-        tempLabel.text = $"{target.Temperature:0} °C";
+        tempLabel.text = Mathf.RoundToInt(target.Temperature) + " °C";
         stateLabel.text = target.State.ToString();
     }
 
-    public void Hide()
+    private void Hide()
     {
-        card?.AddToClassList("thermo-hidden");
+        if (card == null) return;
+        card.AddToClassList("thermo-hidden");
     }
 }
