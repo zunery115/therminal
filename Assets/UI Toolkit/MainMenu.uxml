@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="MainMenu.uss" />
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement class="frame">
+            <ui:Label text="TERMIA" class="title" />
+            <ui:Label text="temperatura" class="subtitle" />
+            <ui:Button name="play" text="Jugar" class="btn" />
+            <ui:Button name="credits" text="Créditos" class="btn" />
+            <ui:Button name="quit" text="Salir" class="btn btn-quiet" />
+        </ui:VisualElement>
+        <ui:VisualElement name="credits-panel" class="credits hidden">
+            <ui:Label text="CRÉDITOS" class="credits-title" />
+            <ui:Label text="Ulises Josue Calva Bravo" class="credits-name" />
+            <ui:Button name="back" text="Volver" class="btn" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

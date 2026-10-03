@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="PauseMenu.uss" />
+    <ui:VisualElement name="root" class="root hidden">
+        <ui:VisualElement class="frame">
+            <ui:Label text="PAUSA" class="title" />
+            <ui:Button name="resume" text="Reanudar" class="btn" />
+            <ui:Button name="menu" text="Menú principal" class="btn btn-quiet" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
