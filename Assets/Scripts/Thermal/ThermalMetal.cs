@@ -6,13 +6,10 @@ public class ThermalMetal : MonoBehaviour
     [SerializeField] private ThermalObject thermal;
     [SerializeField] private SpriteRenderer view;
 
-    [SerializeField] private Vector3 contractedScale = new Vector3(0.45f, 1f, 1f);
-    [SerializeField] private Vector3 normalScale = Vector3.one;
-    [SerializeField] private Vector3 expandedScale = new Vector3(1.85f, 1f, 1f);
-
-    [SerializeField] private Color contractedColor = new Color(0.55f, 0.6f, 0.65f);
-    [SerializeField] private Color normalColor = new Color(0.62f, 0.62f, 0.66f);
-    [SerializeField] private Color expandedColor = new Color(0.78f, 0.42f, 0.32f);
+    [Header("Sprites")]
+    [SerializeField] private Sprite contractedSprite;
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite expandedSprite;
 
     private void Awake()
     {
@@ -36,23 +33,33 @@ public class ThermalMetal : MonoBehaviour
         thermal.onStateChanged.RemoveListener(Apply);
     }
 
+    private void Start()
+    {
+        if (thermal != null)
+            Apply(thermal.State);
+    }
+
     private void Apply(ThermalState state)
     {
+        if (view == null) return;
+
+        view.color = Color.white;
+
         switch (state)
         {
             case ThermalState.Contracted:
-                transform.localScale = contractedScale;
-                if (view != null) view.color = contractedColor;
+                if (contractedSprite != null)
+                    view.sprite = contractedSprite;
                 break;
 
             case ThermalState.Expanded:
-                transform.localScale = expandedScale;
-                if (view != null) view.color = expandedColor;
+                if (expandedSprite != null)
+                    view.sprite = expandedSprite;
                 break;
 
             default:
-                transform.localScale = normalScale;
-                if (view != null) view.color = normalColor;
+                if (normalSprite != null)
+                    view.sprite = normalSprite;
                 break;
         }
     }
