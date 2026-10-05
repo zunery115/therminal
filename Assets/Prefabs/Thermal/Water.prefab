@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5385288422386987224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.02, y: -2.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.7317, y: -1.925, z: 0}
+  m_LocalScale: {x: 1.5766, y: 1.5101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1612266874, guid: e2bc34b7ea5468c4484ee58bc26ec780, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.56078434}
@@ -155,6 +155,8 @@ MonoBehaviour:
   profile: {fileID: 11400000, guid: 732317d9dcdb74e45a34cf8a015872f3, type: 2}
   view: {fileID: 1216405789981788395}
   solidCollider: {fileID: 8620204208290822330}
+  iceSprite: {fileID: 2041226181, guid: e2bc34b7ea5468c4484ee58bc26ec780, type: 3}
+  waterSprite: {fileID: -1612266874, guid: e2bc34b7ea5468c4484ee58bc26ec780, type: 3}
   currentTemperature: 0
   currentState: 0
   onStateChanged:

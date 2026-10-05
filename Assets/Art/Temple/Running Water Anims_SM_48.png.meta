@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 4f1107eaf73d9094f8a834203325d5a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6291149399688362990
+    second: Running Water Anims_SM_48_0
+  - first:
+      213: -4760459891459844520
+    second: Running Water Anims_SM_48_1
+  - first:
+      213: -5480024665238358574
+    second: Running Water Anims_SM_48_2
+  - first:
+      213: -7706933619792499300
+    second: Running Water Anims_SM_48_3
+  - first:
+      213: 4334738108691685918
+    second: Running Water Anims_SM_48_4
+  - first:
+      213: -3940048921182217688
+    second: Running Water Anims_SM_48_5
+  - first:
+      213: 4353912314535174427
+    second: Running Water Anims_SM_48_6
+  - first:
+      213: 6106794153928523093
+    second: Running Water Anims_SM_48_7
+  - first:
+      213: 227874460747437037
+    second: Running Water Anims_SM_48_8
+  - first:
+      213: -5702818135923887616
+    second: Running Water Anims_SM_48_9
+  - first:
+      213: -1002962695127349616
+    second: Running Water Anims_SM_48_10
+  - first:
+      213: 2724107713248793597
+    second: Running Water Anims_SM_48_11
+  - first:
+      213: -3862406074356075315
+    second: Running Water Anims_SM_48_12
+  - first:
+      213: 5485225913603391227
+    second: Running Water Anims_SM_48_13
+  - first:
+      213: -3277632477897791352
+    second: Running Water Anims_SM_48_14
+  - first:
+      213: -6466100335000793387
+    second: Running Water Anims_SM_48_15
+  - first:
+      213: 4401965386343056554
+    second: Running Water Anims_SM_48_16
+  - first:
+      213: 4251451503615259128
+    second: Running Water Anims_SM_48_17
+  - first:
+      213: -5622792522647921045
+    second: Running Water Anims_SM_48_18
+  - first:
+      213: -4166758830641565366
+    second: Running Water Anims_SM_48_19
+  - first:
+      213: 6916770798858450608
+    second: Running Water Anims_SM_48_20
+  - first:
+      213: -3724379651905495074
+    second: Running Water Anims_SM_48_21
+  - first:
+      213: -6561217558708951336
+    second: Running Water Anims_SM_48_22
+  - first:
+      213: 7210082415157508153
+    second: Running Water Anims_SM_48_23
+  - first:
+      213: -6410747474009969172
+    second: Running Water Anims_SM_48_24
+  - first:
+      213: 6669069260405631679
+    second: Running Water Anims_SM_48_25
+  - first:
+      213: -3062551840941092969
+    second: Running Water Anims_SM_48_26
+  - first:
+      213: -9039945257305140516
+    second: Running Water Anims_SM_48_27
+  - first:
+      213: -1055383917393036316
+    second: Running Water Anims_SM_48_28
+  - first:
+      213: -6899780010552278587
+    second: Running Water Anims_SM_48_29
+  - first:
+      213: 3220777765735966275
+    second: Running Water Anims_SM_48_30
+  - first:
+      213: -3994124856101963421
+    second: Running Water Anims_SM_48_31
+  - first:
+      213: -3234761911053460747
+    second: Running Water Anims_SM_48_32
+  - first:
+      213: 8213209054456674163
+    second: Running Water Anims_SM_48_33
+  - first:
+      213: 2694118326748391419
+    second: Running Water Anims_SM_48_34
+  - first:
+      213: 2185708524687519769
+    second: Running Water Anims_SM_48_35
+  - first:
+      213: 1684205095570882765
+    second: Running Water Anims_SM_48_36
+  - first:
+      213: 161492878565545780
+    second: Running Water Anims_SM_48_37
+  - first:
+      213: 2347481921690714087
+    second: Running Water Anims_SM_48_38
+  - first:
+      213: 4282025131551373440
+    second: Running Water Anims_SM_48_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1697
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214c9a2f3f851b8a0800000000000000
+      internalID: -6291149399688362990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1697
+        width: 269
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8569a0263f27fedb0800000000000000
+      internalID: -4760459891459844520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_2
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1697
+        width: 269
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5b614f99a03f3b0800000000000000
+      internalID: -5480024665238358574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_3
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1697
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9da0c4b4b87b0590800000000000000
+      internalID: -7706933619792499300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1505
+        width: 269
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12aaeae755182c30800000000000000
+      internalID: 4334738108691685918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1631
+        width: 77
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ad547a1622259c0800000000000000
+      internalID: -3940048921182217688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_6
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1505
+        width: 269
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11611b9e243c6c30800000000000000
+      internalID: 4353912314535174427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1631
+        width: 77
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d77558de0bfb450800000000000000
+      internalID: 6106794153928523093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1505
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de31c3e5d92992300800000000000000
+      internalID: 227874460747437037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_9
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1505
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 002f995ce158bd0b0800000000000000
+      internalID: -5702818135923887616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_10
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1313
+        width: 269
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09647f12eb2c412f0800000000000000
+      internalID: -1002962695127349616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1439
+        width: 77
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df398124889fdc520800000000000000
+      internalID: 2724107713248793597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_12
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1313
+        width: 269
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4f1b7a32af56ac0800000000000000
+      internalID: -3862406074356075315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1439
+        width: 77
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfef81d08ef6f1c40800000000000000
+      internalID: 5485225913603391227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1313
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8886e9280a28382d0800000000000000
+      internalID: -3277632477897791352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_15
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1313
+        width: 97
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de4e32110cc346a0800000000000000
+      internalID: -6466100335000793387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1199
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa40b8e323ce61d30800000000000000
+      internalID: 4401965386343056554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_17
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1151
+        width: 578
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1b9cc0e90300b30800000000000000
+      internalID: 4251451503615259128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_18
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1199
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e19d1ddf3d7f1b0800000000000000
+      internalID: -5622792522647921045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_19
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 959
+        width: 146
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4133e28be2bc26c0800000000000000
+      internalID: -4166758830641565366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_20
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 791
+        width: 287
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6b0ca156e4dff50800000000000000
+      internalID: 6916770798858450608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 791
+        width: 290
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfda7f6078505cc0800000000000000
+      internalID: -3724379651905495074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_22
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 791
+        width: 290
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6e817a46fd1f4a0800000000000000
+      internalID: -6561217558708951336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_23
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 407
+        width: 290
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938f0c481cb5f0460800000000000000
+      internalID: 7210082415157508153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_24
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 143
+        width: 50
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced27e253237807a0800000000000000
+      internalID: -6410747474009969172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_25
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 143
+        width: 338
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba64f8782b4d8c50800000000000000
+      internalID: 6669069260405631679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_26
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 407
+        width: 290
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fcc76a351af75d0800000000000000
+      internalID: -3062551840941092969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_27
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 143
+        width: 32
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd299552fa9ab8280800000000000000
+      internalID: -9039945257305140516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_28
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 143
+        width: 32
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebb0263be58a51f0800000000000000
+      internalID: -1055383917393036316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_29
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 47
+        width: 50
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1c0b213ae0f30a0800000000000000
+      internalID: -6899780010552278587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_30
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 47
+        width: 50
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3462b23405082bc20800000000000000
+      internalID: 3220777765735966275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_31
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 143
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369fb7bea940298c0800000000000000
+      internalID: -3994124856101963421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_32
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 143
+        width: 32
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fad1be2e21db13d0800000000000000
+      internalID: -3234761911053460747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_33
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 143
+        width: 32
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37779ec9e1e2bf170800000000000000
+      internalID: 8213209054456674163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_34
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf725b8185e636520800000000000000
+      internalID: 2694118326748391419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_35
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910fa84a252355e10800000000000000
+      internalID: 2185708524687519769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_36
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0c7627c9f7f5710800000000000000
+      internalID: 1684205095570882765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_37
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43797acdaecbd3200800000000000000
+      internalID: 161492878565545780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_38
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efb60bce5ee39020800000000000000
+      internalID: 2347481921690714087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Running Water Anims_SM_48_39
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 47
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0883a658b2fcc6b30800000000000000
+      internalID: 4282025131551373440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Running Water Anims_SM_48_0: -6291149399688362990
+      Running Water Anims_SM_48_1: -4760459891459844520
+      Running Water Anims_SM_48_10: -1002962695127349616
+      Running Water Anims_SM_48_11: 2724107713248793597
+      Running Water Anims_SM_48_12: -3862406074356075315
+      Running Water Anims_SM_48_13: 5485225913603391227
+      Running Water Anims_SM_48_14: -3277632477897791352
+      Running Water Anims_SM_48_15: -6466100335000793387
+      Running Water Anims_SM_48_16: 4401965386343056554
+      Running Water Anims_SM_48_17: 4251451503615259128
+      Running Water Anims_SM_48_18: -5622792522647921045
+      Running Water Anims_SM_48_19: -4166758830641565366
+      Running Water Anims_SM_48_2: -5480024665238358574
+      Running Water Anims_SM_48_20: 6916770798858450608
+      Running Water Anims_SM_48_21: -3724379651905495074
+      Running Water Anims_SM_48_22: -6561217558708951336
+      Running Water Anims_SM_48_23: 7210082415157508153
+      Running Water Anims_SM_48_24: -6410747474009969172
+      Running Water Anims_SM_48_25: 6669069260405631679
+      Running Water Anims_SM_48_26: -3062551840941092969
+      Running Water Anims_SM_48_27: -9039945257305140516
+      Running Water Anims_SM_48_28: -1055383917393036316
+      Running Water Anims_SM_48_29: -6899780010552278587
+      Running Water Anims_SM_48_3: -7706933619792499300
+      Running Water Anims_SM_48_30: 3220777765735966275
+      Running Water Anims_SM_48_31: -3994124856101963421
+      Running Water Anims_SM_48_32: -3234761911053460747
+      Running Water Anims_SM_48_33: 8213209054456674163
+      Running Water Anims_SM_48_34: 2694118326748391419
+      Running Water Anims_SM_48_35: 2185708524687519769
+      Running Water Anims_SM_48_36: 1684205095570882765
+      Running Water Anims_SM_48_37: 161492878565545780
+      Running Water Anims_SM_48_38: 2347481921690714087
+      Running Water Anims_SM_48_39: 4282025131551373440
+      Running Water Anims_SM_48_4: 4334738108691685918
+      Running Water Anims_SM_48_5: -3940048921182217688
+      Running Water Anims_SM_48_6: 4353912314535174427
+      Running Water Anims_SM_48_7: 6106794153928523093
+      Running Water Anims_SM_48_8: 227874460747437037
+      Running Water Anims_SM_48_9: -5702818135923887616
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
