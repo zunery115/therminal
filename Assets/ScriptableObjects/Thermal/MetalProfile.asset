@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MetalProfile
   m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
   minTemperature: -40
-  maxTemperature: 50
+  maxTemperature: 100
   ambientTemperature: 20
   returnRate: 3
   freezeTemperature: 0
