@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3557474733374481679406f852715, type: 3}
   m_Name: WaterProfile
   m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
-  minTemperature: -20
+  minTemperature: -40
   maxTemperature: 80
   ambientTemperature: 20
   returnRate: 8

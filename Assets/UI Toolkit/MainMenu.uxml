@@ -1,17 +1,29 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="MainMenu.uss" />
-    <ui:VisualElement name="root" class="root">
-        <ui:VisualElement class="frame">
-            <ui:Label text="TERMIA" class="title" />
-            <ui:Label text="temperatura" class="subtitle" />
-            <ui:Button name="play" text="Jugar" class="btn" />
-            <ui:Button name="credits" text="Créditos" class="btn" />
-            <ui:Button name="quit" text="Salir" class="btn btn-quiet" />
+    <ui:VisualElement name="root" class="menu-root">
+        <ui:VisualElement name="main-panel" class="menu-card">
+            <ui:Label text="Termia" class="menu-title" />
+            <ui:Button name="play-button" text="Jugar" class="menu-button" />
+            <ui:Button name="controls-button" text="Controles" class="menu-button" />
+            <ui:Button name="credits-button" text="Creditos" class="menu-button" />
+            <ui:Button name="quit-button" text="Salir" class="menu-button" />
         </ui:VisualElement>
-        <ui:VisualElement name="credits-panel" class="credits hidden">
-            <ui:Label text="CRÉDITOS" class="credits-title" />
-            <ui:Label text="Ulises Josue Calva Bravo" class="credits-name" />
-            <ui:Button name="back" text="Volver" class="btn" />
+
+        <ui:VisualElement name="controls-panel" class="menu-card panel-hidden">
+            <ui:Label text="Controles" class="menu-title" />
+            <ui:Label text="WASD: Moverte" class="menu-line" />
+            <ui:Label text="Q: Enfriar el objeto" class="menu-line" />
+            <ui:Label text="E: Calentar el objeto" class="menu-line" />
+            <ui:Label text="U: Pausa" class="menu-line" />
+            <ui:Label text="Puedes cambiar la temperatura de las cosas con Q y E." class="menu-note" />
+            <ui:Button name="controls-back" text="Volver" class="menu-button" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="credits-panel" class="menu-card panel-hidden">
+            <ui:Label text="Creditos" class="menu-title" />
+            <ui:Label text="Ulises Josue Calva Bravo" class="menu-line" />
+            <ui:Label text="Puzzle de temperatura" class="menu-line" />
+            <ui:Button name="credits-back" text="Volver" class="menu-button" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

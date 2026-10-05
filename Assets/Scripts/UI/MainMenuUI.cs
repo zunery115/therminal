@@ -5,45 +5,63 @@ using UnityEngine.UIElements;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private UIDocument document;
-    [SerializeField] private string levelScene = "01_sandbox";
+    [SerializeField] private string gameScene = "Level1";
 
-    private VisualElement credits;
+    private VisualElement mainPanel;
+    private VisualElement controlsPanel;
+    private VisualElement creditsPanel;
+
+    private void Awake()
+    {
+        if (document == null) document = GetComponent<UIDocument>();
+    }
 
     private void OnEnable()
     {
-        if (document == null)
-            document = GetComponent<UIDocument>();
-
         VisualElement root = document.rootVisualElement;
 
-        root.Q<Button>("play").clicked += Play;
-        root.Q<Button>("credits").clicked += ShowCredits;
-        root.Q<Button>("quit").clicked += Quit;
-        root.Q<Button>("back").clicked += HideCredits;
+        mainPanel = root.Q<VisualElement>("main-panel");
+        controlsPanel = root.Q<VisualElement>("controls-panel");
+        creditsPanel = root.Q<VisualElement>("credits-panel");
 
-        credits = root.Q<VisualElement>("credits-panel");
+        root.Q<Button>("play-button").clicked += Play;
+        root.Q<Button>("controls-button").clicked += ShowControls;
+        root.Q<Button>("credits-button").clicked += ShowCredits;
+        root.Q<Button>("quit-button").clicked += Quit;
+        root.Q<Button>("controls-back").clicked += ShowMain;
+        root.Q<Button>("credits-back").clicked += ShowMain;
+
+        ShowMain();
     }
 
-    private void Play()
+    private void ShowMain()
     {
-        SceneManager.LoadScene(levelScene);
+        mainPanel.RemoveFromClassList("panel-hidden");
+        controlsPanel.AddToClassList("panel-hidden");
+        creditsPanel.AddToClassList("panel-hidden");
+    }
+
+    private void ShowControls()
+    {
+        mainPanel.AddToClassList("panel-hidden");
+        controlsPanel.RemoveFromClassList("panel-hidden");
+        creditsPanel.AddToClassList("panel-hidden");
     }
 
     private void ShowCredits()
     {
-        credits.RemoveFromClassList("hidden");
+        mainPanel.AddToClassList("panel-hidden");
+        controlsPanel.AddToClassList("panel-hidden");
+        creditsPanel.RemoveFromClassList("panel-hidden");
     }
 
-    private void HideCredits()
+    private void Play()
     {
-        credits.AddToClassList("hidden");
+        SceneManager.LoadScene(gameScene);
     }
 
     private void Quit()
     {
         Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
 }

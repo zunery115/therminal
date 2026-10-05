@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3557474733374481679406f852715, type: 3}
   m_Name: IceBlockProfile
   m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
-  startTemperature: -10
-  minTemperature: -40
+  minTemperature: -50
   maxTemperature: 40
-  returnRate: 8
-  thresholds:
-  - celsius: -40
-    state: 0
-  - celsius: 0
-    state: 2
+  ambientTemperature: 20
+  returnRate: 7
+  freezeTemperature: 0
+  heatTemperature: 40
+  isMetal: 0
