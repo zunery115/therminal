@@ -3,11 +3,9 @@ using UnityEngine;
 public class ThermalDoor : MonoBehaviour
 {
     [SerializeField] private ThermalObject source;
-    [SerializeField] private ThermalState openWhen = ThermalState.Contracted;
+    [SerializeField] private ThermalState openWhen = ThermalState.Expanded;
     [SerializeField] private Collider2D doorCollider;
     [SerializeField] private SpriteRenderer view;
-
-    [Header("Sprites")]
     [SerializeField] private Sprite closedSprite;
     [SerializeField] private Sprite openSprite;
 
@@ -15,41 +13,33 @@ public class ThermalDoor : MonoBehaviour
 
     private void Awake()
     {
-        if (doorCollider == null)
-            doorCollider = GetComponent<Collider2D>();
-
-        if (view == null)
-            view = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start()
-    {
-        if (source == null) return;
-        Apply(source.State == openWhen);
+        if (view == null) view = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         if (source == null) return;
-
-        bool open = source.State == openWhen;
-        if (open == isOpen) return;
-
-        isOpen = open;
-        Apply(open);
+        ApplyState(source.State);
     }
 
-    private void Apply(bool open)
+    public void ApplyState(ThermalState state)
     {
+        bool open = state == openWhen;
+        if (open == isOpen && view != null && view.sprite == (open ? openSprite : closedSprite))
+            return;
+
+        isOpen = open;
+
         if (doorCollider != null)
-        {
-            doorCollider.enabled = true;
-            doorCollider.isTrigger = open;
-        }
+            doorCollider.enabled = !open;
 
         if (view == null) return;
 
-        view.color = Color.white;
-        view.sprite = open ? openSprite : closedSprite;
+        if (open && openSprite != null)
+            view.sprite = openSprite;
+        else if (!open && closedSprite != null)
+            view.sprite = closedSprite;
+
+        view.color = open ? new Color(1f, 1f, 1f, 0.35f) : Color.white;
     }
 }

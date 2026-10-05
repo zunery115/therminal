@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3557474733374481679406f852715, type: 3}
   m_Name: WaterProfile
   m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
-  startTemperature: 20
   minTemperature: -20
-  maxTemperature: 100
+  maxTemperature: 80
+  ambientTemperature: 20
   returnRate: 8
-  thresholds:
-  - celsius: -1
-    state: 0
-  - celsius: 1
-    state: 2
-  - celsius: 80
-    state: 3
+  freezeTemperature: 0
+  heatTemperature: 40
+  isMetal: 0

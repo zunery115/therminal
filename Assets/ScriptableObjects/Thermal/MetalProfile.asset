@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3557474733374481679406f852715, type: 3}
   m_Name: MetalProfile
   m_EditorClassIdentifier: Assembly-CSharp::ThermalProfileSO
-  startTemperature: 20
   minTemperature: -40
-  maxTemperature: 120
+  maxTemperature: 50
+  ambientTemperature: 20
   returnRate: 3
-  thresholds:
-  - celsius: -15
-    state: 5
-  - celsius: 10
-    state: 1
-  - celsius: 55
-    state: 4
+  freezeTemperature: 0
+  heatTemperature: 40
+  isMetal: 1

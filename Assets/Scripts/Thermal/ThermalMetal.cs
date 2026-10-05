@@ -1,66 +1,55 @@
 using UnityEngine;
 
-[RequireComponent(typeof(ThermalObject))]
 public class ThermalMetal : MonoBehaviour
 {
     [SerializeField] private ThermalObject thermal;
     [SerializeField] private SpriteRenderer view;
-
-    [Header("Sprites")]
     [SerializeField] private Sprite contractedSprite;
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite expandedSprite;
 
     private void Awake()
     {
-        if (thermal == null)
-            thermal = GetComponent<ThermalObject>();
-
-        if (view == null)
-            view = GetComponent<SpriteRenderer>();
+        if (thermal == null) thermal = GetComponent<ThermalObject>();
+        if (view == null) view = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
     {
-        if (thermal == null) return;
-        thermal.onStateChanged.AddListener(Apply);
-        Apply(thermal.State);
-    }
-
-    private void OnDisable()
-    {
-        if (thermal == null) return;
-        thermal.onStateChanged.RemoveListener(Apply);
+        if (thermal != null)
+            thermal.onStateChanged.AddListener(ApplyState);
     }
 
     private void Start()
     {
         if (thermal != null)
-            Apply(thermal.State);
+            ApplyState(thermal.State);
     }
 
-    private void Apply(ThermalState state)
+    private void OnDisable()
+    {
+        if (thermal != null)
+            thermal.onStateChanged.RemoveListener(ApplyState);
+    }
+
+    public void ApplyState(ThermalState state)
     {
         if (view == null) return;
 
-        view.color = Color.white;
-
-        switch (state)
+        if (state == ThermalState.Contracted)
         {
-            case ThermalState.Contracted:
-                if (contractedSprite != null)
-                    view.sprite = contractedSprite;
-                break;
-
-            case ThermalState.Expanded:
-                if (expandedSprite != null)
-                    view.sprite = expandedSprite;
-                break;
-
-            default:
-                if (normalSprite != null)
-                    view.sprite = normalSprite;
-                break;
+            view.color = new Color(0.55f, 0.78f, 1f);
+            if (contractedSprite != null) view.sprite = contractedSprite;
+        }
+        else if (state == ThermalState.Expanded)
+        {
+            view.color = new Color(1f, 0.45f, 0.3f);
+            if (expandedSprite != null) view.sprite = expandedSprite;
+        }
+        else
+        {
+            view.color = Color.white;
+            if (normalSprite != null) view.sprite = normalSprite;
         }
     }
 }

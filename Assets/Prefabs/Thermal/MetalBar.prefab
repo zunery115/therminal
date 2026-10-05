@@ -157,6 +157,9 @@ MonoBehaviour:
   solidCollider: {fileID: 1461216688203930230}
   iceSprite: {fileID: 0}
   waterSprite: {fileID: 0}
+  contractedSprite: {fileID: -735225023, guid: 9e5bd0532a1170540b9b4d0ed9c6d910, type: 3}
+  normalSprite: {fileID: 1182211163094387737, guid: 9e5bd0532a1170540b9b4d0ed9c6d910, type: 3}
+  expandedSprite: {fileID: 1842297437, guid: 9e5bd0532a1170540b9b4d0ed9c6d910, type: 3}
   currentTemperature: 0
   currentState: 0
   onStateChanged:

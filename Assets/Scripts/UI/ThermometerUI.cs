@@ -10,10 +10,14 @@ public class ThermometerUI : MonoBehaviour
     private Label tempLabel;
     private Label stateLabel;
 
+    private void Awake()
+    {
+        if (document == null) document = GetComponent<UIDocument>();
+    }
+
     private void OnEnable()
     {
-        if (document == null)
-            document = GetComponent<UIDocument>();
+        if (document == null) return;
 
         VisualElement root = document.rootVisualElement;
         card = root.Q<VisualElement>("thermo-card");
@@ -35,9 +39,12 @@ public class ThermometerUI : MonoBehaviour
         }
 
         card.RemoveFromClassList("thermo-hidden");
-        nameLabel.text = target.GetDisplayName();
-        tempLabel.text = Mathf.RoundToInt(target.Temperature) + " °C";
-        stateLabel.text = target.State.ToString();
+        card.EnableInClassList("cold", target.Temperature < 0f);
+        card.EnableInClassList("hot", target.Temperature > 40f);
+
+        if (nameLabel != null) nameLabel.text = target.GetDisplayName();
+        if (tempLabel != null) tempLabel.text = Mathf.RoundToInt(target.Temperature) + " °C";
+        if (stateLabel != null) stateLabel.text = target.State.ToString();
     }
 
     private void Hide()
