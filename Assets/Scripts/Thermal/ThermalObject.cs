@@ -3,11 +3,11 @@ using UnityEngine.Events;
 
 public enum ThermalState
 {
-    Contracted,
-    Frozen,
+    Contracted, // metal frio
+    Frozen,     // agua congelada
     Normal,
-    Heated,
-    Expanded
+    Heated,     // agua caliente
+    Expanded    // metal caliente
 }
 
 public class ThermalObject : MonoBehaviour
@@ -24,6 +24,7 @@ public class ThermalObject : MonoBehaviour
     [SerializeField] private float currentTemperature;
     [SerializeField] private ThermalState currentState;
 
+    // La puerta y el metal escuchan este evento.
     public UnityEvent<ThermalState> onStateChanged;
 
     public ThermalState State => currentState;
@@ -36,6 +37,7 @@ public class ThermalObject : MonoBehaviour
 
     private void Update()
     {
+        // Si returnRate es 0, la temperatura se queda donde la dejaste.
         if (profile == null || profile.returnRate <= 0f) return;
 
         currentTemperature = Mathf.MoveTowards(
@@ -59,16 +61,23 @@ public class ThermalObject : MonoBehaviour
         EvaluateState(false);
     }
 
+    // Un objeto con ThermalMetal cuenta como metal aunque el perfil no este marcado.
+    private bool IsMetal()
+    {
+        return (profile != null && profile.isMetal) || GetComponent<ThermalMetal>() != null;
+    }
+
     private void EvaluateState(bool force)
     {
         if (profile == null) return;
 
         ThermalState next = ThermalState.Normal;
+        bool metal = IsMetal();
 
         if (currentTemperature <= profile.freezeTemperature)
-            next = profile.isMetal ? ThermalState.Contracted : ThermalState.Frozen;
+            next = metal ? ThermalState.Contracted : ThermalState.Frozen;
         else if (currentTemperature >= profile.heatTemperature)
-            next = profile.isMetal ? ThermalState.Expanded : ThermalState.Heated;
+            next = metal ? ThermalState.Expanded : ThermalState.Heated;
 
         if (!force && next == currentState) return;
 
@@ -81,7 +90,8 @@ public class ThermalObject : MonoBehaviour
     {
         if (view == null) return;
 
-        if (profile != null && profile.isMetal)
+        // El metal cambia de color y de sprite. No se toca su collider.
+        if (IsMetal())
         {
             if (currentState == ThermalState.Contracted)
             {
@@ -110,10 +120,10 @@ public class ThermalObject : MonoBehaviour
 
     public string GetDisplayName()
     {
-        if (currentState == ThermalState.Frozen) return "Ice";
         if (currentState == ThermalState.Contracted) return "Compressed";
         if (currentState == ThermalState.Expanded) return "Expanded";
+        if (currentState == ThermalState.Frozen) return "Ice";
         if (currentState == ThermalState.Heated) return "Hot";
-        return profile != null && profile.isMetal ? "Metal" : "Water";
+        return IsMetal() ? "Metal" : "Water";
     }
 }

@@ -5,9 +5,9 @@ public class PlayerSlime : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer view;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Sprite[] greenFrames;
-    [SerializeField] private Sprite[] redFrames;
-    [SerializeField] private Sprite[] blueFrames;
+    [SerializeField] private Sprite[] greenFrames; // normal
+    [SerializeField] private Sprite[] redFrames;   // calentando
+    [SerializeField] private Sprite[] blueFrames;  // enfriando
     [SerializeField] private float frameRate = 8f;
 
     private Sprite[] current;
@@ -27,6 +27,7 @@ public class PlayerSlime : MonoBehaviour
 
     private void Update()
     {
+        // Verde si no se oprime nada. E usa los frames rojos y Q los azules.
         Sprite[] next = greenFrames;
 
         if (Keyboard.current != null)
@@ -37,6 +38,7 @@ public class PlayerSlime : MonoBehaviour
                 next = blueFrames;
         }
 
+        // Si cambia de color, la animacion empieza de nuevo.
         if (next != current)
         {
             current = next;
@@ -47,6 +49,7 @@ public class PlayerSlime : MonoBehaviour
         if (current == null || current.Length == 0 || view == null)
             return;
 
+        // Quieto se queda en el primer frame.
         bool moving = rb != null && rb.linearVelocity.sqrMagnitude > 0.05f;
         if (!moving)
         {
@@ -55,6 +58,7 @@ public class PlayerSlime : MonoBehaviour
             return;
         }
 
+        // Caminando recorre los frames a la velocidad de frameRate.
         timer += Time.deltaTime;
         if (timer >= 1f / frameRate)
         {

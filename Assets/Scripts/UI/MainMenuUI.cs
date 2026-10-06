@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private UIDocument document;
-    [SerializeField] private string gameScene = "Level1";
+    [SerializeField] private string gameScene = "01_level";
 
     private VisualElement mainPanel;
     private VisualElement controlsPanel;
@@ -24,6 +24,7 @@ public class MainMenuUI : MonoBehaviour
         controlsPanel = root.Q<VisualElement>("controls-panel");
         creditsPanel = root.Q<VisualElement>("credits-panel");
 
+        // Cada boton del UXML llama a su metodo.
         root.Q<Button>("play-button").clicked += Play;
         root.Q<Button>("controls-button").clicked += ShowControls;
         root.Q<Button>("credits-button").clicked += ShowCredits;
@@ -62,6 +63,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Quit()
     {
+        // En el editor detiene Play. En el build cierra el juego.
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

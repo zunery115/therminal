@@ -12,6 +12,7 @@ public class ThermometerUI : MonoBehaviour
 
     private void Awake()
     {
+        // Si no lo asignaste, usa el UIDocument de este mismo objeto.
         if (document == null) document = GetComponent<UIDocument>();
     }
 
@@ -19,6 +20,7 @@ public class ThermometerUI : MonoBehaviour
     {
         if (document == null) return;
 
+        // Estos nombres tienen que coincidir con HUD.uxml.
         VisualElement root = document.rootVisualElement;
         card = root.Q<VisualElement>("thermo-card");
         nameLabel = root.Q<Label>("thermo-name");
@@ -32,6 +34,7 @@ public class ThermometerUI : MonoBehaviour
     {
         if (card == null) return;
 
+        // Sin objeto enfrente, el panel se esconde.
         if (target == null)
         {
             Hide();
@@ -39,6 +42,8 @@ public class ThermometerUI : MonoBehaviour
         }
 
         card.RemoveFromClassList("thermo-hidden");
+
+        // cold y hot cambian el color de los grados en HUD.uss.
         card.EnableInClassList("cold", target.Temperature < 0f);
         card.EnableInClassList("hot", target.Temperature > 40f);
 

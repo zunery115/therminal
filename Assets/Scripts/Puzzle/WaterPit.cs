@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(ThermalObject))]
 public class WaterPit : MonoBehaviour
 {
     [SerializeField] private ThermalObject thermal;
@@ -9,31 +8,29 @@ public class WaterPit : MonoBehaviour
 
     private void Awake()
     {
-        if (thermal == null)
-            thermal = GetComponent<ThermalObject>();
-
-        if (pit == null)
-            pit = GetComponent<Collider2D>();
+        if (thermal == null) thermal = GetComponent<ThermalObject>();
+        if (pit == null) pit = GetComponent<Collider2D>();
     }
 
     private void LateUpdate()
     {
         if (pit == null) return;
 
-        pit.enabled = true;
+        // Siempre trigger. Si se apaga, el hielo se vuelve un bloque y no se puede cruzar.
         pit.isTrigger = true;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (thermal == null || thermal.State == ThermalState.Frozen) return;
         if (!other.CompareTag("Player")) return;
+
+        // Congelado se puede caminar. Solo el agua derretida regresa al respawn.
+        if (thermal != null && thermal.State == ThermalState.Frozen) return;
         if (respawn == null) return;
 
         other.transform.position = respawn.position;
 
-        Rigidbody2D rb = other.attachedRigidbody;
-        if (rb != null)
-            rb.linearVelocity = Vector2.zero;
+        Rigidbody2D body = other.attachedRigidbody;
+        if (body != null) body.linearVelocity = Vector2.zero;
     }
 }

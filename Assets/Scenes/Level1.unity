@@ -21810,6 +21810,14 @@ PrefabInstance:
       propertyPath: respawn
       value: 
       objectReference: {fileID: 677168486}
+    - target: {fileID: 5421367140362545144, guid: f1b633a57f8192b4084bad3018bd3039, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421367140362545144, guid: f1b633a57f8192b4084bad3018bd3039, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8035946882297387845, guid: f1b633a57f8192b4084bad3018bd3039, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -22376,12 +22384,16 @@ PrefabInstance:
       value: MetalBar
       objectReference: {fileID: 0}
     - target: {fileID: 4723561849392785271, guid: e142f12c47639ec4daebc7c088c5080a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4514
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723561849392785271, guid: e142f12c47639ec4daebc7c088c5080a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.49
       objectReference: {fileID: 0}
     - target: {fileID: 4723561849392785271, guid: e142f12c47639ec4daebc7c088c5080a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.47
+      value: -7.4855
       objectReference: {fileID: 0}
     - target: {fileID: 4723561849392785271, guid: e142f12c47639ec4daebc7c088c5080a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -9,27 +9,34 @@ public class ThermalDoor : MonoBehaviour
     [SerializeField] private Sprite closedSprite;
     [SerializeField] private Sprite openSprite;
 
-    private bool isOpen;
-
     private void Awake()
     {
         if (view == null) view = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (source == null) return;
-        ApplyState(source.State);
+        if (source != null)
+            source.onStateChanged.AddListener(ApplyState);
+    }
+
+    private void Start()
+    {
+        if (source != null)
+            ApplyState(source.State);
+    }
+
+    private void OnDisable()
+    {
+        if (source != null)
+            source.onStateChanged.RemoveListener(ApplyState);
     }
 
     public void ApplyState(ThermalState state)
     {
         bool open = state == openWhen;
-        if (open == isOpen && view != null && view.sprite == (open ? openSprite : closedSprite))
-            return;
 
-        isOpen = open;
-
+        // Abierta: se apaga el collider para poder pasar.
         if (doorCollider != null)
             doorCollider.enabled = !open;
 

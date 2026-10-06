@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 4866be726aac9c84bb2aa40b38539949
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - view: {instanceID: 0}
+  - greenSprite: {fileID: 2117491818, guid: f578bec53f0b16a4c8f6e5cd2f87abfe, type: 3}
+  - redSprite: {instanceID: 0}
+  - blueSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,6 +13,7 @@ public class MusicPlayer : MonoBehaviour
 
     private void Awake()
     {
+        // Si ya hay musica de otra escena, este duplicado se borra.
         if (instance != null)
         {
             Destroy(gameObject);
@@ -36,6 +37,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (mixer == null) return;
 
+        // El mixer usa decibelios, no 0 a 1.
         float db = value <= 0.0001f ? -80f : Mathf.Log10(value) * 20f;
         mixer.SetFloat("MusicVolume", db);
     }

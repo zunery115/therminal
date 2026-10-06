@@ -6,15 +6,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ThermometerUI thermometer;
     [SerializeField] private float moveSpeed = 4f;
-    [SerializeField] private float reach = 1.2f;
+    [SerializeField] private float reach = 1.2f;      // que tan lejos llega la herramienta
     [SerializeField] private float toolRadius = 0.45f;
-    [SerializeField] private float power = 25f;
+    [SerializeField] private float power = 25f;       // grados por segundo
 
     private Vector2 facing = Vector2.down;
 
     private void Awake()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
+
+        // El prefab no puede guardar el HUD de la escena, asi que lo busca.
         if (thermometer == null)
             thermometer = FindFirstObjectByType<ThermometerUI>();
     }
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null) return;
 
+        // WASD o flechas. El Input System nuevo no usa Input.GetAxis.
         Vector2 move = Vector2.zero;
         if (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) move.x -= 1f;
         if (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) move.x += 1f;
@@ -33,11 +36,13 @@ public class PlayerController : MonoBehaviour
         if (move.sqrMagnitude > 1f)
             move.Normalize();
 
+        // La herramienta apunta hacia donde caminaste por ultima vez.
         if (move.sqrMagnitude > 0.01f)
             facing = move.normalized;
 
         rb.linearVelocity = move * moveSpeed;
 
+        // Circulo delante del slime. Ahi se busca el objeto termico.
         Vector2 origin = rb.position + facing * reach;
         Collider2D[] hits = Physics2D.OverlapCircleAll(origin, toolRadius);
 
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
         if (target == null) return;
 
+        // Q enfria. E calienta.
         if (keyboard.qKey.isPressed)
             target.AddTemperature(-power * Time.deltaTime);
 
