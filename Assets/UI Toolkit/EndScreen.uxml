@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="EndScreen.uss" />
+    <ui:VisualElement name="root" class="end-root">
+        <ui:VisualElement name="end-card" class="end-card">
+            <ui:Label text="Gracias por jugar" class="end-title" />
+            <ui:Label text="Termia" class="end-game" />
+            <ui:Button name="menu-button" text="Volver al menu" class="end-button" />
+            <ui:Button name="quit-button" text="Salir" class="end-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

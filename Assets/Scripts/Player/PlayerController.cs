@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
+        if (thermometer == null)
+            thermometer = FindFirstObjectByType<ThermometerUI>();
     }
 
     private void Update()
